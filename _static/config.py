@@ -13,8 +13,7 @@ WORK_DIR = os.path.dirname(__file__)
 ROOT_WORD = 'py_police'                 # root directory
 ROOT_DIR = WORK_DIR.partition(ROOT_WORD)[0] + WORK_DIR.partition(ROOT_WORD)[1]
 
-DESTIN_DIR = os.path.join(ROOT_DIR, 'asset', 'img') + "\\"
-print(DESTIN_DIR)
+DESTIN_DIR = os.path.join(ROOT_DIR, '_static', 'img') + "\\"
 
 
 
@@ -59,4 +58,9 @@ ENEMY_HEIGHT = OBJ_DICT['enemy'][1]   # size_y = 30
 """# 에너미 위치"""
 EPOS_X = 100
 EPOS_Y = 150
-EPOS_MOV = 8      # 움직이는 거리
+EPOS_MOV = 8      # 움직이는 거리(속도)
+
+
+
+if __name__ == '__main__':
+    print(DESTIN_DIR)
