@@ -4,6 +4,16 @@
 #\n\n\n"""
 print(__doc__)
 
+from config import *         # 따로 저장한 변수를 불러온다.
+
+
+
+"""  CALCULATE """
+def draw_socre(count):
+    global DISPLAYSURF
+    font = pygame.font.Font("freesansbold.ttf", 20)
+    text = font.render("Arrest Crime: "+ str(count), True, FONT_COLOR)
+    DISPLAYSURF.blit(text, (5, 10))
 
 
 if __name__ == '__main__':

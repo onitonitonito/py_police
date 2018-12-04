@@ -12,8 +12,7 @@ import time
 import pygame
 
 from asset.config import *         # 따로 저장한 변수를 불러온다.
-from asset.main import *           # 2개 이상 불러올 때 문제가...있다
-
+# from asset.main import *           # 2개 이상 불러올 때 문제가...있다
 
 
 """  CALCULATE """

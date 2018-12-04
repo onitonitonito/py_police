@@ -9,6 +9,7 @@ print(__doc__)
 import sys
 import time
 import pygame
+
 from _static.config import *         # 따로 저장한 변수를 불러온다.
 
 
