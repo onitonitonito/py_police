@@ -3,8 +3,8 @@
 #
 #\n\n\n"""
 print(__doc__)
-
-from config import *         # 따로 저장한 변수를 불러온다.
+# 따로 저장한 변수를 불러온다.
+from .config import *
 
 
 
