@@ -4,9 +4,8 @@
 #
 #\n\n\n"""
 print(__doc__)
-
-
 import os
+import pygame
 
 FPS = 30
 WORK_DIR = os.path.dirname(__file__)
@@ -33,7 +32,7 @@ PAD_HEIGHT = 640
 """# 스프라이트 오브젝트 정보"""
 # 'key_name' :  [size_x, y, POS_x, y,'file_name.png'],
 OBJ_DICT = {
-        'player': [20, 30, 100, 100,'car_top.png'],
+        'player': [17, 30, 100, 100,'car_top.png'],
         'enemy' : [25, 30, 200, 200,'police_0.png'],
 
         'pcar_0' : [25, 30, 200, 200,'kr_police_0.png'],
@@ -59,6 +58,16 @@ ENEMY_HEIGHT = OBJ_DICT['enemy'][1]   # size_y = 30
 EPOS_X = 100
 EPOS_Y = 150
 EPOS_MOV = 8      # 움직이는 거리(속도)
+
+
+"""# 파이게임 초기화(INIT) 및 변수설정"""
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((PAD_WIDTH, PAD_HEIGHT))
+pygame.display.set_caption('GET IT CRIME!!')
+FPS_CLK = pygame.time.Clock()   # FPS_CLK.tick(FPS)
+
+x = PAD_WIDTH * 0.45                          # 45% 플레이어 pos_x
+y = PAD_HEIGHT * 0.80 - (PLAYER_HEIGHT * 1.7)  # 80% 플레이어 pos_y
 
 
 

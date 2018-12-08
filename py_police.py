@@ -5,53 +5,10 @@
 #
 #\n\n\n"""
 print(__doc__)
-
 import sys
 import time
-import pygame
-
 from _static.config import *         # 따로 저장한 변수를 불러온다.
-
-
-"""  CALCULATE """
-def draw_socre(count):
-    global DISPLAYSURF
-    font = pygame.font.Font("freesansbold.ttf", 20)
-    text = font.render("Arrest Crime: "+ str(count), True, WHITE)
-    DISPLAYSURF.blit(text, (5, 10))
-
-def draw_game_over():
-    global DISPLAYSURF
-    font = pygame.font.Font("freesansbold.ttf", 45)
-    text = font.render("GAME OVER", True, WHITE)
-
-    text_pos = text.get_rect()
-    text_pos.center = (PAD_WIDTH/2, PAD_HEIGHT*0.45)
-
-    DISPLAYSURF.blit(text, text_pos)
-
-def set_image(filename):
-    return pygame.image.load(filename)
-
-def set_size(obj, width, height):
-    return pygame.transform.scale(obj, (width, height))
-
-def set_rotate(obj, angle):
-    return pygame.transform.rotate(obj, angle)
-
-def set_obj(dict_key, f_name_wdir, rotate=0):
-    """ MAKING IMAG_OBJ Using dict_key as OBJ_name """
-    size_x = OBJ_DICT[dict_key][1]
-    size_y = OBJ_DICT[dict_key][0]
-
-    obj_name = set_image(f_name_wdir)
-    obj_name = set_size(obj_name, size_x, size_y)
-    obj_name = set_rotate(obj_name, rotate)
-    return obj_name
-
-def draw_object(obj, x, y):
-    global DISPLAYSURF
-    DISPLAYSURF.blit(obj, (x, y))
+from _static.main import *         # 따로 저장한 변수를 불러온다.
 
 player = set_obj('player', DESTIN_DIR+'car_top.png', rotate=90 )
 enemy = set_obj('enemy', DESTIN_DIR+'kr_police_0.png', rotate=0)
@@ -85,18 +42,7 @@ ecars = {
 
 
 
-
 if __name__ == '__main__':
-    """ INITIALIZE GAME """
-    pygame.init()
-
-    DISPLAYSURF = pygame.display.set_mode((PAD_WIDTH, PAD_HEIGHT))
-    pygame.display.set_caption('GET IT CRIME!!')
-    FPS_CLK = pygame.time.Clock()   # FPS_CLK.tick(FPS)
-
-    x = PAD_WIDTH * 0.45                          # 45% 플레이어 pos_x
-    y = PAD_HEIGHT * 0.80 - (PLAYER_HEIGHT * 1.7)  # 80% 플레이어 pos_y
-
     ongame = True                   # 루프를 빠져나가기 위한 옵션
     anim = 0                        # 아니메 스프라이트 8장 카운트를 위한 숫자
 
