@@ -1,4 +1,4 @@
-"""
+"""-------------------------
 # 경찰차 애니매이션 - 총 8장의 스프라이트
 # 오브젝트 딕트와 리스트가 막 뒤죽박죽 됬는데 .. 일단은 놔두고
 # 천천히 리펙토링을 해야겠다~ 지금은 여기서 끝!
@@ -7,8 +7,8 @@
 print(__doc__)
 import sys
 import time
-from _static.config import *         # 따로 저장한 변수를 불러온다.
-from _static.main import *         # 따로 저장한 변수를 불러온다.
+from asset.config import *         # 따로 저장한 변수를 불러온다.
+from asset.main import *         # 따로 저장한 변수를 불러온다.
 
 player = set_obj('player', DESTIN_DIR+'car_top.png', rotate=90 )
 enemy = set_obj('enemy', DESTIN_DIR+'kr_police_0.png', rotate=0)
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     anim = 0                        # 아니메 스프라이트 8장 카운트를 위한 숫자
 
     while ongame:
-        DISPLAYSURF.fill(BLACK)
+        SCREEN.fill(BLACK)
 
         draw_socre(anim)
         draw_game_over()

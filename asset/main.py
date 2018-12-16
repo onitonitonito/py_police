@@ -9,20 +9,20 @@ from .config import *
 
 """  CALCULATE """
 def draw_socre(count):
-    global DISPLAYSURF
+    global SCREEN
     font = pygame.font.Font("freesansbold.ttf", 20)
     text = font.render("Arrest Crime: "+ str(count), True, WHITE)
-    DISPLAYSURF.blit(text, (5, 10))
+    SCREEN.blit(text, (5, 10))
 
 def draw_game_over():
-    global DISPLAYSURF
+    global SCREEN
     font = pygame.font.Font("freesansbold.ttf", 45)
     text = font.render("GAME OVER", True, WHITE)
 
     text_pos = text.get_rect()
     text_pos.center = (PAD_WIDTH/2, PAD_HEIGHT*0.45)
 
-    DISPLAYSURF.blit(text, text_pos)
+    SCREEN.blit(text, text_pos)
 
 def set_image(filename):
     return pygame.image.load(filename)
@@ -44,8 +44,8 @@ def set_obj(dict_key, f_name_wdir, rotate=0):
     return obj_name
 
 def draw_object(obj, x, y):
-    global DISPLAYSURF
-    DISPLAYSURF.blit(obj, (x, y))
+    global SCREEN
+    SCREEN.blit(obj, (x, y))
 
 
 if __name__ == '__main__':
