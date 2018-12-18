@@ -1,25 +1,25 @@
 """-------------------------
-# Config.py - 의존성이 없는 독립 모듈을 만들어보자
+# 01.Config.py - 의존성이 없는 독립 모듈을 만들어보자
 #
 #
 #\n\n\n"""
 print(__doc__)
 
 
-FPS = 30
+FPS = 10
 
 """ # COLOR TABLE """
-BLACK = (0, 0, 0)  # 000000
-WHITE = (255, 255, 255)  # ffffff
-RED = (255, 0, 0)  # ff0000
-GREEN = (0, 255, 0)  # 00ff00
-BLUE = (0, 0, 255)  # 0000ff
-DARKGRAY = (70, 70, 70)  # 707070
+BLACK = (0, 0, 0)           # #000000
+WHITE = (255, 255, 255)     # #ffffff
+RED = (255, 0, 0)           # #ff0000
+GREEN = (0, 255, 0)         # #00ff00
+BLUE = (0, 0, 255)          # #0000ff
+DARKGRAY = (70, 70, 70)     # #707070
 
 
 """# 스크린 환경설정 변수"""
 SCREEN_TITLE = 'HEY.........TEST!!!'
-(PAD_WIDTH, PAD_HEIGHT) = SCREEN_SIZE = (480, 480)
+(PAD_WIDTH, PAD_HEIGHT) = SCREEN_SIZE = (360, 480)
 FONT_COLOR = BLACK
 
 
@@ -49,9 +49,9 @@ OBJ_DICT = {
 
 if __name__ == '__main__':
     print(POSXY)
-
     POSX = 120
     POSY = 50
     print(POSX)
     print(POSY)
     print(POSXY)
+    pass

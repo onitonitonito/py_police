@@ -19,19 +19,38 @@ def set_rotate(obj, angle):
     return pygame.transform.rotate(obj, angle)
 
 
-def set_obj(obj_dict, key, rotate=0):
+def set_obj(obj_dict, key):
     """ MAKING IMAG_OBJ Using dict_key as OBJ_name """
-    (size_x, size_y) = obj_dict[key][3]
-    fname_wdir = obj_dict[key][0] + obj_dict[key][1]
+    wdir = obj_dict[key][0]
+    first_fname = obj_dict[key][1]
+    chk_anim = obj_dict[key][2][0]
+    num_img = obj_dict[key][2][1]
 
-    object = set_image(fname_wdir)
-    object = set_size(object, size_x, size_y)
-    object = set_rotate(object, rotate)
-    return object
+    fnames = []
+    if chk_anim is True:
+        for index in range(num_img):
+            fname = "{}{}_{}.png".format(
+                    wdir, first_fname[:-6], index
+                )
+            fnames.append(fname)
+    else:
+        fname = "{}{}".format(wdir, first_fname)
+        fnames.append(fname)
+
+    (size_x, size_y) = obj_dict[key][3]
+
+    objects = []
+    for fname_wdir in fnames:
+        object = set_image(fname_wdir)
+        object = set_size(object, size_x, size_y)
+        objects.append(object)
+
+    return objects, len(objects)
 
 
 def draw_object(screen, object, posxy, rotate=0):
     (x, y) = posxy
+
     object = set_rotate(object, rotate)
     screen.blit(object, (x, y))
 
