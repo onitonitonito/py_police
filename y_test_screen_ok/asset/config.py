@@ -6,7 +6,7 @@
 print(__doc__)
 
 
-FPS = 10
+FPS = 20
 
 """ # COLOR TABLE """
 BLACK = (0, 0, 0)           # #000000
@@ -14,7 +14,7 @@ WHITE = (255, 255, 255)     # #ffffff
 RED = (255, 0, 0)           # #ff0000
 GREEN = (0, 255, 0)         # #00ff00
 BLUE = (0, 0, 255)          # #0000ff
-DARKGRAY = (70, 70, 70)     # #707070
+DARKGRAY = (50, 50, 50)     # #505050
 
 
 """# 스크린 환경설정 변수"""
@@ -33,16 +33,16 @@ FONT_COLOR = BLACK
 OBJ_DICT = {
     'police': [
         './asset/img/',
-        'jp_police_0.png',
+        'kr_police_0.png',
         (True, 8),
-        (30, 25),
+        (32, 28),
     ],
 
     'player': [
         './asset/img/',
         'car_top.png',
         (False, 1),
-        (30, 20),
+        (32, 22),
     ],
 }
 

@@ -67,7 +67,7 @@ def draw_game_over(screen, pad_width, pad_height):
     text = font.render("GAME OVER", True, (255, 255, 255))  # ffffff
 
     text_pos = text.get_rect()
-    text_pos.center = (pad_width / 2, pad_height * 0.45)
+    text_pos.center = (pad_width / 2, pad_height * 0.5)
 
     screen.blit(text, text_pos)
 
